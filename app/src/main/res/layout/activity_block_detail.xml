@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlockDetailActivity">
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_login"
+        android:text="Duyệt"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        ></Button>
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_login"
+        android:text="Tử chối"
+        android:textStyle="bold"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@id/btn_submit"
+        ></Button>
+    <ScrollView
+        android:layout_below="@id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Người thực hiện:"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textStyle="bold"
+                ></TextView>
+            <TextView
+                android:id="@+id/txt_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Thắng"
+                android:textColor="@color/black"
+                android:paddingStart="10dp"
+                ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Hành động:"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <TextView
+                android:id="@+id/txt_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Thắng"
+                android:textColor="@color/black"
+                android:paddingStart="10dp"
+                ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Mã sản phẩm:"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <TextView
+                android:id="@+id/txt_product_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Thắng"
+                android:textColor="@color/black"
+                android:paddingStart="10dp"
+                ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Tên sản phẩm:"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <TextView
+                android:id="@+id/tct_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Thắng"
+                android:textColor="@color/black"
+                android:paddingStart="10dp"
+                ></TextView>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
