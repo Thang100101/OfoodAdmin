@@ -2,6 +2,7 @@ package com.example.ofoodadmin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,7 @@ public class UserDetailActivity extends AppCompatActivity {
     private User user;
     private Button btnSubmit, btnCancel;
     private TextView txt_phone,txt_address,txt_owner_name,txt_city,txt_scope,txt_email,txt_locator_code;
+    private ProgressDialog dialog = new ProgressDialog(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,13 +75,13 @@ public class UserDetailActivity extends AppCompatActivity {
                 jsonPlaceHolder.patchUser(user.getId(),user).enqueue(new Callback<List<User>>() {
                     @Override
                     public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
+                        finish();
+                        dialog.dismiss();
                     }
 
                     @Override
                     public void onFailure(Call<List<User>> call, Throwable t) {
-
+                        dialog.dismiss();
                     }
                 });
             }
@@ -92,13 +94,13 @@ public class UserDetailActivity extends AppCompatActivity {
                 jsonPlaceHolder.deleteUser(user.getId()).enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
+                        finish();
+                        dialog.dismiss();
                     }
 
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) {
-
+                        dialog.dismiss();
                     }
                 });
             }

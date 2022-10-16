@@ -2,6 +2,7 @@ package com.example.ofoodadmin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -65,10 +66,12 @@ public class BlockDetailActivity extends AppCompatActivity {
         txt_product_code.setText(block.getProduct().getProductCode());
         txt_expired.setText(String.valueOf(block.getProduct().isExpỉed()));
         txt_date.setText(block.getProduct().getCertificationDate());
+        ProgressDialog dialog = new ProgressDialog(this);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Xử lí duyệt block và quay về main
+                dialog.show();
                 block.setStatus(true);
                 jsonPlaceHolder=retrofitClient.getInstance("https://ofood-database.herokuapp.com/").create(JsonPlaceHolder.class);
                 jsonPlaceHolder.patchBlock(block.getId(),block).enqueue(new Callback<List<Block>>() {
@@ -87,33 +90,34 @@ public class BlockDetailActivity extends AppCompatActivity {
                             block.getProduct().getVietgapCode(), block.getProduct().getStatus(),
                             block.getProduct().getCertificationDate(), block.getProduct().getPhone(),
                             block.getProduct().getAddress(), block.getProduct().isExpỉed());
-                    if(block.getAction().toString().equals("Add")) {
+                    if(block.getAction() == Block.Action.Add) {
                         jsonPlaceHolder = retrofitClient.getInstance("https://ofood-database.herokuapp.com/").create(JsonPlaceHolder.class);
                         jsonPlaceHolder.createProduct(product).enqueue(new Callback<Product>() {
                             @Override
                             public void onResponse(Call<Product> call, Response<Product> response) {
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(intent);
+                                finish();
+                                dialog.dismiss();
                             }
 
                             @Override
                             public void onFailure(Call<Product> call, Throwable t) {
                                 Toast.makeText(BlockDetailActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
                             }
                         });
                     }
-                    else if(block.getAction().toString().equals("Update")){
+                    else if(block.getAction() == Block.Action.Update){
                         jsonPlaceHolder = retrofitClient.getInstance("https://ofood-database.herokuapp.com/").create(JsonPlaceHolder.class);
                         jsonPlaceHolder.patchProduct(block.getProduct().getId(),product).enqueue(new Callback<List<Product>>() {
                             @Override
                             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(intent);
+                                finish();
+                                dialog.dismiss();
                             }
 
                             @Override
                             public void onFailure(Call<List<Product>> call, Throwable t) {
-
+                                dialog.dismiss();
                             }
                         });
                     }

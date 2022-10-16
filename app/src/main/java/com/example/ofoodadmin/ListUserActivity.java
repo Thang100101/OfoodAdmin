@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -25,12 +26,14 @@ public class ListUserActivity extends AppCompatActivity {
     private JsonPlaceHolder jsonPlaceHolder;
     private RetrofitClient retrofitClient;
     private List<User> users;
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_user);
         users=new ArrayList<>();
+        dialog = new ProgressDialog(this);
         rclUser = findViewById(R.id.rcl_user);
         UserAdapter adapter = new UserAdapter();
         adapter.setUsers(getUser(adapter));
@@ -49,6 +52,7 @@ public class ListUserActivity extends AppCompatActivity {
         });
     }
     private List<User> getUser(UserAdapter adapter){
+        dialog.show();
         jsonPlaceHolder=retrofitClient.getInstance("https://ofood-database.herokuapp.com/").create(JsonPlaceHolder.class);
         jsonPlaceHolder.getListUser().enqueue(new Callback<List<User>>() {
             @Override
@@ -59,11 +63,12 @@ public class ListUserActivity extends AppCompatActivity {
                     }
                 }
                 adapter.notifyDataSetChanged();
+                dialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
-
+                dialog.dismiss();
             }
         });
         return users;

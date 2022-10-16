@@ -66,6 +66,7 @@ public class ListBlockActivity extends AppCompatActivity {
                 for (Block block:response.body()){
                     if(!block.isStatus()) {
                         blocks.add(block);
+                        dialog.dismiss();
                     }
                 }
                 adapter.notifyDataSetChanged();
@@ -73,6 +74,7 @@ public class ListBlockActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Block>> call, Throwable t) {
                 Toast.makeText(ListBlockActivity.this, "Không có yêu cầu chờ duyệt", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
             }
         });
         return blocks;
