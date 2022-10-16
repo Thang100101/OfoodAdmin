@@ -37,6 +37,14 @@ public class Block implements Serializable {
         this.status = status;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Block(boolean status, Action action, Product product, User user) {
         this.status = status;
         this.action = action;

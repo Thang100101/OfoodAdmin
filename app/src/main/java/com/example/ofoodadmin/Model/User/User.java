@@ -3,6 +3,7 @@ package com.example.ofoodadmin.Model.User;
 import java.io.Serializable;
 
 public class User implements Serializable {
+    private int id;
     private String username;
     private String password;
     private Certificator certificator;
@@ -37,6 +38,14 @@ public class User implements Serializable {
     }
 
     public User() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Certificator getCertificator() {

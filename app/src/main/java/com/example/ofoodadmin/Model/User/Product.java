@@ -7,36 +7,53 @@ import java.io.Serializable;
 public class Product implements Serializable {
     protected int id;
     protected String productName,productCode,vietgapCode;
-    protected String certificationDate;
+    protected String certificationDate,address,phone;
 
 
     protected User user;
-    protected boolean isExpỉed;
+    protected boolean isExpired;
     protected Exp status;
 
     public enum Exp{
         Due,OutOfDate
     }
 
-    public Product(String productName, String productCode, String vietgapCode, Exp status, String certificationDate, User user, boolean isExpỉed) {
+    public Product(String productName, String productCode, String vietgapCode, Exp status, String certificationDate,String phone,String address,boolean isExpired) {
         this.productName = productName;
         this.productCode = productCode;
         this.vietgapCode = vietgapCode;
         this.status = status;
         this.certificationDate = certificationDate;
-        this.user = user;
-        this.isExpỉed=isExpỉed;
+        this.isExpired=isExpired;
+        this.address=address;
+        this.phone=phone;
     }
 
     public Product() {
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public boolean isExpỉed() {
-        return isExpỉed;
+        return isExpired;
     }
 
     public void setExpỉed(boolean expỉed) {
-        isExpỉed = expỉed;
+        isExpired = expỉed;
     }
 
 
