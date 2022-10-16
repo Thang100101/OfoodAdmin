@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BlockDetailActivity">
+    tools:context=".UserDetailActivity">
 
     <Button
         android:id="@+id/btn_submit"
@@ -45,177 +45,138 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="Người thực hiện:"
-                android:textColor="@color/black"
-                android:padding="5dp"
-                android:textStyle="bold"
-                ></TextView>
-            <TextView
-                android:id="@+id/txt_user_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Thắng"
-                android:textColor="@color/black"
-                android:paddingStart="10dp"
-                ></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Hành động:"
-                android:textColor="@color/black"
-                android:padding="5dp"
-                android:textStyle="bold"
-
-                ></TextView>
-            <TextView
-                android:id="@+id/txt_action"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Thắng"
-                android:textColor="@color/black"
-                android:paddingStart="10dp"
-                ></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Mã sản phẩm:"
-                android:textColor="@color/black"
-                android:padding="5dp"
-                android:textStyle="bold"
-
-                ></TextView>
-            <TextView
-                android:id="@+id/txt_product_code"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="15698451654"
-                android:textColor="@color/black"
-                android:paddingStart="10dp"
-                ></TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Tên sản phẩm:"
-                android:textColor="@color/black"
-                android:padding="5dp"
-                android:textStyle="bold"
-
-                ></TextView>
-            <TextView
-                android:id="@+id/txt_product_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Rau"
-                android:textColor="@color/black"
-                android:paddingStart="10dp"
-                ></TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Mã VietGap:"
-                android:textColor="@color/black"
-                android:padding="5dp"
-                android:textStyle="bold"
-
-                ></TextView>
-            <TextView
-                android:id="@+id/txt_vietgap_code"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="VG123q21"
-                android:textColor="@color/black"
-                android:paddingStart="10dp"
-                ></TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Địa chỉ cơ sở:"
-                android:textColor="@color/black"
-                android:padding="5dp"
-                android:textStyle="bold"
-
-                ></TextView>
-            <TextView
-                android:id="@+id/txt_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="HT13 Quận 12"
-                android:textColor="@color/black"
-                android:paddingStart="10dp"
-                ></TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
                 android:text="Số điện thoại:"
                 android:textColor="@color/black"
                 android:padding="5dp"
                 android:textStyle="bold"
-
                 ></TextView>
             <TextView
                 android:id="@+id/txt_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="0334186276"
+                android:text="03341812152"
                 android:textColor="@color/black"
                 android:paddingStart="10dp"
                 ></TextView>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="Ngày chứng nhận:"
+                android:text="Địa chỉ:"
                 android:textColor="@color/black"
                 android:padding="5dp"
                 android:textStyle="bold"
 
                 ></TextView>
             <TextView
-                android:id="@+id/txt_date"
+                android:id="@+id/txt_adress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="10/1/2022"
+                android:text="579 Q12"
                 android:textColor="@color/black"
                 android:paddingStart="10dp"
                 ></TextView>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="Tình trạng chứng nhận:"
+                android:text="Tên chủ sở hữu:"
                 android:textColor="@color/black"
                 android:padding="5dp"
                 android:textStyle="bold"
 
                 ></TextView>
             <TextView
-                android:id="@+id/txt_expired"
+                android:id="@+id/txt_owner_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="Còn hạn"
+                android:text="none"
                 android:textColor="@color/black"
                 android:paddingStart="10dp"
                 ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Thành phố:"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <TextView
+                android:id="@+id/txt_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="none"
+                android:textColor="@color/black"
+                android:paddingStart="10dp"
+                ></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Phạm vi chứng nhận:"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <TextView
+                android:id="@+id/txt_scope"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="none"
+                android:textColor="@color/black"
+                android:paddingStart="10dp"
+                ></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Email:"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <TextView
+                android:id="@+id/txt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="none"
+                android:textColor="@color/black"
+                android:paddingStart="10dp"
+                ></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Mã định vị:"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <TextView
+                android:id="@+id/txt_locator_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="none"
+                android:textColor="@color/black"
+                android:paddingStart="10dp"
+                ></TextView>
+
 
         </LinearLayout>
     </ScrollView>

@@ -1,4 +1,4 @@
-package com.example.ofoodadmin.User;
+package com.example.ofoodadmin.Model.User;
 
 import java.io.Serializable;
 

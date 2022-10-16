@@ -1,7 +1,6 @@
-package com.example.ofoodadmin;
+package com.example.ofoodadmin.Model.User;
 
-import com.example.ofoodadmin.User.User;
-import com.example.ofoodadmin.User.User;
+import com.example.ofoodadmin.Model.User.User;
 
 import java.io.Serializable;
 

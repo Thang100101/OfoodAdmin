@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ofoodadmin.Block;
+import com.example.ofoodadmin.Model.User.Block;
 
 import java.util.List;
 

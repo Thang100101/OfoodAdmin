@@ -8,6 +8,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.ofoodadmin.Model.User.Block;
+
 import java.util.List;
 
 public class ListBlockActivity extends AppCompatActivity {
