@@ -40,8 +40,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//        startActivity(intent);
         btnScan = findViewById(R.id.btn_scan);
         btnScan.setOnClickListener(new View.OnClickListener() {
             @Override
