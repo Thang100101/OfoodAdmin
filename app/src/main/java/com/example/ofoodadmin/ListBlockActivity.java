@@ -27,6 +27,7 @@ public class ListBlockActivity extends AppCompatActivity {
     private JsonPlaceHolder jsonPlaceHolder;
     private RetrofitClient retrofitClient;
     private List<Block> blocks;
+    private BlockAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +37,11 @@ public class ListBlockActivity extends AppCompatActivity {
         blocks=new ArrayList<>();
         dialog = new ProgressDialog(this);
         dialog.show();
-        getListBlock();
+
     }
 
     private void getListBlock() {
-        BlockAdapter adapter = new BlockAdapter();
+        adapter = new BlockAdapter();
         adapter.setBlocks(getData(adapter));
         rclBlock.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -78,5 +79,12 @@ public class ListBlockActivity extends AppCompatActivity {
             }
         });
         return blocks;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        getListBlock();
     }
 }

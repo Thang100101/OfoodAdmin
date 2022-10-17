@@ -97,6 +97,7 @@ public class BlockDetailActivity extends AppCompatActivity {
                             public void onResponse(Call<Product> call, Response<Product> response) {
                                 finish();
                                 dialog.dismiss();
+                                onBackPressed();
                             }
 
                             @Override
@@ -113,6 +114,7 @@ public class BlockDetailActivity extends AppCompatActivity {
                             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                                 finish();
                                 dialog.dismiss();
+                                onBackPressed();
                             }
 
                             @Override
@@ -132,8 +134,7 @@ public class BlockDetailActivity extends AppCompatActivity {
                 jsonPlaceHolder.deleteBlock(block.getId()).enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
+                        onBackPressed();
                     }
 
                     @Override

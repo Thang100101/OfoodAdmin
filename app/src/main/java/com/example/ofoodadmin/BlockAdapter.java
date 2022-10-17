@@ -19,6 +19,7 @@ public class BlockAdapter extends  RecyclerView.Adapter<BlockAdapter.BlockHolder
 
     public void setBlocks(List<Block> blocks) {
         this.blocks = blocks;
+        notifyDataSetChanged();
     }
 
     public void setListener(OnClickItemListener listener) {

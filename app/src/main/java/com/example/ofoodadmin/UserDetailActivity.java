@@ -27,13 +27,14 @@ public class UserDetailActivity extends AppCompatActivity {
     private User user;
     private Button btnSubmit, btnCancel;
     private TextView txt_phone,txt_address,txt_owner_name,txt_city,txt_scope,txt_email,txt_locator_code;
-    private ProgressDialog dialog = new ProgressDialog(this);
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_detail);
         Intent intent=getIntent();
+        dialog = new ProgressDialog(this);
         Bundle bundle=intent.getBundleExtra("getuser");
         if(bundle!=null){
             user=(User) bundle.getSerializable("user");
@@ -77,6 +78,7 @@ public class UserDetailActivity extends AppCompatActivity {
                     public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                         finish();
                         dialog.dismiss();
+                        onBackPressed();
                     }
 
                     @Override
@@ -96,6 +98,7 @@ public class UserDetailActivity extends AppCompatActivity {
                     public void onResponse(Call<Void> call, Response<Void> response) {
                         finish();
                         dialog.dismiss();
+                        onBackPressed();
                     }
 
                     @Override

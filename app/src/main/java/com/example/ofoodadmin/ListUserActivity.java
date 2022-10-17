@@ -27,6 +27,7 @@ public class ListUserActivity extends AppCompatActivity {
     private RetrofitClient retrofitClient;
     private List<User> users;
     private ProgressDialog dialog;
+    private UserAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +36,7 @@ public class ListUserActivity extends AppCompatActivity {
         users=new ArrayList<>();
         dialog = new ProgressDialog(this);
         rclUser = findViewById(R.id.rcl_user);
-        UserAdapter adapter = new UserAdapter();
-        adapter.setUsers(getUser(adapter));
+        adapter = new UserAdapter();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rclUser.setAdapter(adapter);
         rclUser.setLayoutManager(layoutManager);
@@ -51,6 +51,15 @@ public class ListUserActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        users.clear();
+        adapter.setUsers(getUser(adapter));
+
+    }
+
     private List<User> getUser(UserAdapter adapter){
         dialog.show();
         jsonPlaceHolder=retrofitClient.getInstance("https://ofood-database.herokuapp.com/").create(JsonPlaceHolder.class);
