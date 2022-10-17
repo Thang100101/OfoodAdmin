@@ -84,7 +84,7 @@ public class ListBlockActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
+        blocks.clear();
         getListBlock();
     }
 }
