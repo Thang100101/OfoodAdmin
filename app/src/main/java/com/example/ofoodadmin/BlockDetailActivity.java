@@ -124,6 +124,7 @@ public class BlockDetailActivity extends AppCompatActivity {
                         });
                     }
                 }
+                finish();
             }
         });
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -142,6 +143,7 @@ public class BlockDetailActivity extends AppCompatActivity {
 
                     }
                 });
+                finish();
             }
         });
     }

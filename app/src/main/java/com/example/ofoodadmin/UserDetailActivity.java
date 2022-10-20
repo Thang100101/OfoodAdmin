@@ -86,6 +86,7 @@ public class UserDetailActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
+                finish();
             }
         });
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +107,7 @@ public class UserDetailActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
+                finish();
             }
         });
     }
